@@ -32,7 +32,14 @@ def get_cart(username: str) -> list[Product]:
         items.extend(get_product(prod_id) for prod_id in product_ids)
 
     return items
-
+"""
+Reason for changing :
+The optimized get_cart function improves readability and performance by streamlining the logic and reducing redundancy. 
+It first checks if cart_details is empty and exits early, avoiding unnecessary processing. The nested loops are flattened by 
+directly iterating through the product IDs in cart_detail["contents"] and appending the corresponding Product objects to the 
+items list using a generator expression. This approach eliminates intermediate lists, simplifies the code structure, and ensures 
+the function is efficient and easy to maintain.
+"""
     
 
 
